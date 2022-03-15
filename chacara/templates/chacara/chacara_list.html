@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Chácaras</h1>
+        <p class="lead">Aqui está a lista de todas as chácaras</p>
+    </div>
+</div>
+<ul>
+    {% for chacara in object_list %}
+    <li>{{ chacara.nome }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
