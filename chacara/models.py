@@ -1,12 +1,10 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.db import models
-
-Usuario = get_user_model()
 
 
 class Chacara(models.Model):
-    proprietario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    imagem = models.ImageField(upload_to='chacara')
+    proprietario = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagem = models.ImageField(upload_to='chacaras')
     nome = models.CharField(max_length=20)
     capacidade = models.CharField(max_length=5)
     descricao = models.TextField(max_length=1000)
@@ -18,3 +16,6 @@ class Chacara(models.Model):
     estado = models.CharField(max_length=2)
     latitude = models.CharField(max_length=10)
     longitude = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.nome
