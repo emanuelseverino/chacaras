@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'teste',
     'chacara',
     'core',
+    'ckeditor',    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
