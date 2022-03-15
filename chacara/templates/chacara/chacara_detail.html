@@ -4,7 +4,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">{{ object.nome }}</h1>
-        <p class="lead">{{ object.descricao }}</p>
+        <p class="lead">{{ object.descricao_curta }}</p>
     </div>
 </div>
 <div class="container">
@@ -15,6 +15,7 @@
     <div class="col-lg-4">
         <h1>Contato</h1></br>
         <h1>{{ object.proprietario.first_name }} {{ object.proprietario.last_name }}</h1></br>
+        <p class="lead">{{ object.descricao }}</p>
     </div>
 </div>
 </div>
