@@ -3,6 +3,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 from datetime import datetime
+from tinymce import models as tinymce_models
 
 class Chacara(models.Model):
 
@@ -124,7 +125,7 @@ class Chacara(models.Model):
     capacidade = models.CharField(choices = capacidade_choices, max_length=300, blank=True)
     espaco = models.IntegerField()                                          #em metros quadrados
     descricao = RichTextField()
-    descricao_curta = models.TextField(max_length=300)
+    descricao_curta = tinymce_models.HTMLField(max_length=300)
     cep = models.CharField(max_length=20)
     endereco = models.CharField(max_length=100)
     numero = models.CharField(max_length=5)

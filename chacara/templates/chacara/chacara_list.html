@@ -11,17 +11,16 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3">
         {% for chacara in object_list %}
-        <a class="navbar-brand" href="{% url 'chacara-detail' chacara.id %}">
             <div class="col mb-4">
-                <div class="card">
-                    <img src="{{chacara.imagem.url}}" class="card-img-top" alt="...">
+                <div class="card bg-light mb-3">
+                    <a href="{% url 'chacara-detail' chacara.id %}"> <img src="{{chacara.imagem.url}}" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">{{ chacara.nome }}</h5>
-                        <p class="card-text">{{ chacara.descricao_curta }}</p>
+                        <p class="card-text">{{ chacara.descricao_curta|safe }}</p>
+                        <a href="{% url 'chacara-detail' chacara.id %}" class="btn btn-secondary">Confira</a>
                     </div>
                 </div>
             </div>
-        </a>
         {% endfor %}
     </div>
 </div>
